@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Indian Tools Website</title>
+    <meta name="description" content="Discover a collection of free online tools designed with India in mind. Image editors, PDF utilities, and more, celebrating Indian culture.">
+    <meta name="keywords" content="India tools, image editor, PDF converter, online tools, free tools, Indian culture, Indian design, festive tools">
+    <link rel="canonical" href="https://www.example.com/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.7;
+        }
+        header {
+            text-align: center;
+            padding: 3rem 0;
+            background-color: #fff;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header .logo {
+            margin-bottom: 1.5rem;
+        }
+        header .logo img {
+            height: auto;
+            max-width: 200px;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #E65100;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+        header p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        main {
+            padding: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section {
+            margin-bottom: 4rem;
+        }
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 600;
+            color: #D84315;
+            text-align: center;
+            margin-bottom: 2.5rem;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        .section-title::before,
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 3px;
+            background-color: #FFB300;
+        }
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        .tool-card {
+            background-color: #fff;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid #f5f5f5;
+        }
+        .tool-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            border-color: #FFD54F;
+        }
+        .tool-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #E65100;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+        .tool-card p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        .tool-card a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background-color: #FFB300;
+            color: #222;
+            padding: 0.8rem 1.75rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border: none;
+        }
+        .tool-card a:hover {
+            background-color: #FF9800;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 7px rgba(0,0,0,0.1);
+        }
+        .tool-card a:active {
+            transform: translateY(0);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .festive-section {
+            text-align: center;
+            padding: 2.5rem 0;
+            background-color: #FFF3E0;
+            border-radius: 0.75rem;
+            margin-top: 2rem;
+        }
+        .festive-section h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #E65100;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+        .festive-section p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        footer {
+            text-align: center;
+            padding: 2.5rem 0;
+            background-color: #fff;
+            border-top: 1px solid #f5f5f5;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.25rem;
+            }
+            header p {
+                font-size: 1rem;
+            }
+            main {
+                padding: 2rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .tool-grid {
+                grid-template-columns: 1fr;
+            }
+            .tool-card {
+                padding: 1.5rem;
+            }
+            .tool-card h3 {
+                font-size: 1.25rem;
+            }
+            .tool-card p {
+                font-size: 1rem;
+            }
+            .tool-card a {
+                font-size: 1rem;
+                padding: 0.8rem 1.5rem;
+            }
+            .festive-section h2 {
+                font-size: 1.75rem;
+            }
+            .festive-section p {
+                font-size: 1rem;
+            }
+        }
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.75rem;
+            }
+            header p {
+                font-size: 0.9rem;
+            }
+            .section-title {
+                font-size: 1.5rem;
+                display: block;
+                text-align: center;
+            }
+             .section-title::before,
+            .section-title::after{
+                display: none;
+            }
+            main {
+                padding: 1.5rem;
+            }
+            .tool-card {
+                padding: 1rem;
+            }
+            .tool-card h3 {
+                font-size: 1.1rem;
+            }
+            .tool-card p {
+                font-size: 0.95rem;
+            }
+            .tool-card a {
+                font-size: 0.95rem;
+                padding: 0.75rem 1.25rem;
+            }
+            .festive-section h2 {
+                font-size: 1.5rem;
+            }
+            .festive-section p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="indian_logo.png" alt="Indian Tools Logo">
+        </div>
+        <h1>My Indian Tools</h1>
+        <p>Welcome to your collection of online tools, celebrating the spirit of India.  We offer a variety of free and easy-to-use utilities.</p>
+    </header>
+    <main>
+        <section class="section">
+            <h2 class="section-title">Image Tools</h2>
+            <div class="tool-grid">
+                <div class="tool-card">
+                    <h3>Diwali Photo Editor</h3>
+                    <p>Add festive Diwali effects to your photos.</p>
+                    <a href="/diwali-photo-editor">Edit Diwali Photos</a>
+                </div>
+                <div class="tool-card">
+                    <h3>Holi Color Creator</h3>
+                    <p>Create vibrant Holi-themed images.</p>
+                    <a href="/holi-color-creator">Create Holi Colors</a>
+                </div>
+                <div class="tool-card">
+                    <h3>Indian Art Generator</h3>
+                    <p>Generate unique Indian art styles.</p>
+                    <a href="/indian-art-generator">Generate Art</a>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <h2 class="section-title">PDF Tools</h2>
+            <div class="tool-grid">
+                <div class="tool-card">
+                    <h3>PDF Converter</h3>
+                    <p>Convert PDFs to popular Indian file formats.</p>
+                    <a href="/pdf-converter">Convert PDFs</a>
+                </div>
+                <div class="tool-card">
+                    <h3>PDF Editor</h3>
+                    <p>Edit and annotate your PDFs with Indian cultural elements.</p>
+                    <a href="/pdf-editor">Edit PDFs</a>
+                </div>
+                <div class="tool-card">
+                    <h3>PDF Merger</h3>
+                    <p>Merge multiple PDFs into one.</p>
+                    <a href="/pdf-merger">Merge PDF</a>
+                </div>
+            </div>
+        </section>
+        <section class="festive-section">
+            <h2>Celebrating Indian Festivals</h2>
+            <p>Explore our special tools designed for Indian festivals. Create personalized greetings, edit photos with festive effects, and share your celebrations with unique designs.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 My Indian Tools. All rights reserved.</p>
+    </footer>
+    <script>
+        //  Add interactivity if needed.
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Indian Tools Website</title>
+    <meta name="description" content="Discover a collection of free online tools designed with India in mind. Image editors, PDF utilities, and more, celebrating Indian culture.">
+    <meta name="keywords" content="India tools, image editor, PDF converter, online tools, free tools, Indian culture, Indian design, festive tools">
+    <link rel="canonical" href="https://www.example.com/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.7;
+        }
+        header {
+            text-align: center;
+            padding: 3rem 0;
+            background-color: #fff;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header .logo {
+            margin-bottom: 1.5rem;
+        }
+        header .logo img {
+            height: auto;
+            max-width: 200px;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #E65100;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+        header p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        main {
+            padding: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section {
+            margin-bottom: 4rem;
+        }
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 600;
+            color: #D84315;
+            text-align: center;
+            margin-bottom: 2.5rem;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        .section-title::before,
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 3px;
+            background-color: #FFB300;
+        }
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        .tool-card {
+            background-color: #fff;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid #f5f5f5;
+        }
+        .tool-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            border-color: #FFD54F;
+        }
+        .tool-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #E65100;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+        .tool-card p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        .tool-card a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background-color: #FFB300;
+            color: #222;
+            padding: 0.8rem 1.75rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border: none;
+        }
+        .tool-card a:hover {
+            background-color: #FF9800;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 7px rgba(0,0,0,0.1);
+        }
+        .tool-card a:active {
+            transform: translateY(0);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .festive-section {
+            text-align: center;
+            padding: 2.5rem 0;
+            background-color: #FFF3E0;
+            border-radius: 0.75rem;
+            margin-top: 2rem;
+        }
+        .festive-section h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #E65100;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+        .festive-section p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        footer {
+            text-align: center;
+            padding: 2.5rem 0;
+            background-color: #fff;
+            border-top: 1px solid #f5f5f5;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.25rem;
+            }
+            header p {
+                font-size: 1rem;
+            }
+            main {
+                padding: 2rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .tool-grid {
+                grid-template-columns: 1fr;
+            }
+            .tool-card {
+                padding: 1.5rem;
+            }
+            .tool-card h3 {
+                font-size: 1.25rem;
+            }
+            .tool-card p {
+                font-size: 1rem;
+            }
+            .tool-card a {
+                font-size: 1rem;
+                padding: 0.8rem 1.5rem;
+            }
+            .festive-section h2 {
+                font-size: 1.75rem;
+            }
+            .festive-section p {
+                font-size: 1rem;
+            }
+        }
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.75rem;
+            }
+            header p {
+                font-size: 0.9rem;
+            }
+            .section-title {
+                font-size: 1.5rem;
+                display: block;
+                text-align: center;
+            }
+             .section-title::before,
+            .section-title::after{
+                display: none;
+            }
+            main {
+                padding: 1.5rem;
+            }
+            .tool-card {
+                padding: 1rem;
+            }
+            .tool-card h3 {
+                font-size: 1.1rem;
+            }
+            .tool-card p {
+                font-size: 0.95rem;
+            }
+            .tool-card a {
+                font-size: 0.95rem;
+                padding: 0.75rem 1.25rem;
+            }
+            .festive-section h2 {
+                font-size: 1.5rem;
+            }
+            .festive-section p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="https://www.example.com/">
+                <img src="indian_logo.png" alt="Indian Tools Logo">
+            </a>
+        </div>
+        <h1>My Indian Tools</h1>
+        <p>Welcome to your collection of online tools, celebrating the spirit of India.  We offer a variety of free and easy-to-use utilities.</p>
+    </header>
+    <main>
+        <section class="section">
+            <h2 class="section-title">Image Tools</h2>
+            <div class="tool-grid">
+                <div class="tool-card">
+                    <h3>Diwali Photo Editor</h3>
+                    <p>Add festive Diwali effects to your photos.</p>
+                    <a href="/diwali-photo-editor">Edit Diwali Photos</a>
+                </div>
+                <div class="tool-card">
+                    <h3>Holi Color Creator</h3>
+                    <p>Create vibrant Holi-themed images.</p>
+                    <a href="/holi-color-creator">Create Holi Colors</a>
+                </div>
+                <div class="tool-card">
+                    <h3>Indian Art Generator</h3>
+                    <p>Generate unique Indian art styles.</p>
+                    <a href="/indian-art-generator">Generate Art</a>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <h2 class="section-title">PDF Tools</h2>
+            <div class="tool-grid">
+                <div class="tool-card">
+                    <h3>PDF Converter</h3>
+                    <p>Convert PDFs to popular Indian file formats.</p>
+                    <a href="/pdf-converter">Convert PDFs</a>
+                </div>
+                <div class="tool-card">
+                    <h3>PDF Editor</h3>
+                    <p>Edit and annotate your PDFs with Indian cultural elements.</p>
+                    <a href="/pdf-editor">Edit PDFs</a>
+                </div>
+                <div class="tool-card">
+                    <h3>PDF Merger</h3>
+                    <p>Merge multiple PDFs into one.</p>
+                    <a href="/pdf-merger">Merge PDF</a>
+                </div>
+            </div>
+        </section>
+        <section class="festive-section">
+            <h2>Celebrating Indian Festivals</h2>
+            <p>Explore our special tools designed for Indian festivals. Create personalized greetings, edit photos with festive effects, and share your celebrations with unique designs.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 My Indian Tools. All rights reserved.</p>
+    </footer>
+    <script>
+        //  Add interactivity if needed.
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Indian Tools Website</title>
+    <meta name="description" content="Discover a collection of free online tools designed with India in mind. Image editors, PDF utilities, and more, celebrating Indian culture.">
+    <meta name="keywords" content="India tools, image editor, PDF converter, online tools, free tools, Indian culture, Indian design, festive tools">
+    <link rel="canonical" href="https://www.example.com/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.7;
+        }
+        header {
+            text-align: center;
+            padding: 3rem 0;
+            background-color: #fff;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header .logo {
+            margin-bottom: 1.5rem;
+        }
+        header .logo img {
+            height: auto;
+            max-width: 200px;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #E65100;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+        header p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        main {
+            padding: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section {
+            margin-bottom: 4rem;
+        }
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 600;
+            color: #D84315;
+            text-align: center;
+            margin-bottom: 2.5rem;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        .section-title::before,
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 3px;
+            background-color: #FFB300;
+        }
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        .tool-card {
+            background-color: #fff;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid #f5f5f5;
+        }l
+        .tool-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            border-color: #FFD54F;
+        }
+        .tool-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #E65100;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }img-compress.html
+        .tool-card p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        .tool-card a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background-color: #FFB300;
+            color: #222;
+            padding: 0.8rem 1.75rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border: none;
+        }
+        .tool-card a:hover {
+            background-color: #FF9800;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 7px rgba(0,0,0,0.1);
+        }
+        .tool-card a:active {
+            transform: translateY(0);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .festive-section {
+            text-align: center;
+            padding: 2.5rem 0;
+            background-color: #FFF3E0;
+            border-radius: 0.75rem;
+            margin-top: 2rem;
+        }
+        .festive-section h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #E65100;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+        .festive-section p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        footer {
+            text-align: center;
+            padding: 2.5rem 0;
+            background-color: #fff;
+            border-top: 1px solid #f5f5f5;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.25rem;
+            }
+            header p {
+                font-size: 1rem;
+            }
+            main {
+                padding: 2rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .tool-grid {
+                grid-template-columns: 1fr;
+            }
+            .tool-card {
+                padding: 1.5rem;
+            }
+            .tool-card h3 {
+                font-size: 1.25rem;
+            }
+            .tool-card p {
+                font-size: 1rem;
+            }
+            .tool-card a {
+                font-size: 1rem;
+                padding: 0.8rem 1.5rem;
+            }
+            .festive-section h2 {
+                font-size: 1.75rem;
+            }
+            .festive-section p {
+                font-size: 1rem;
+            }
+        }
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.75rem;
+            }
+            header p {
+                font-size: 0.9rem;
+            }
+            .section-title {
+                font-size: 1.5rem;
+                display: block;
+                text-align: center;
+            }
+             .section-title::before,
+            .section-title::after{
+                display: none;
+            }
+            main {
+                padding: 1.5rem;
+            }
+            .tool-card {
+                padding: 1rem;
+            }
+            .tool-card h3 {
+                font-size: 1.1rem;
+            }
+            .tool-card p {
+                font-size: 0.95rem;
+            }
+            .tool-card a {
+                font-size: 0.95rem;
+                padding: 0.75rem 1.25rem;
+            }
+            .festive-section h2 {
+                font-size: 1.5rem;
+            }
+            .festive-section p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="https://www.example.com/">
+                <img src="indian_logo.png" alt="Indian Tools Logo">
+            </a>
+        </div>
+        <h1>My Indian Tools</h1>
+        <p>Welcome to your collection of online tools, celebrating the spirit of India.  We offer a variety of free and easy-to-use utilities.</p>
+    </header>
+    <main>
+        <section class="section">
+            <h2 class="section-title">Image Tools</h2>
+            <div class="tool-grid">
+                <div class="tool-card">
+                    <h3>Diwali Photo Editor</h3>
+                    <p>Add festive Diwali effects to your photos.</p>
+                    <a href="/diwali-photo-editor">Edit Diwali Photos</a>
+                </div>
+                <div class="tool-card">
+                    <h3>Holi Color Creator</h3>
+                    <p>Create vibrant Holi-themed images.</p>
+                    <a href="/holi-color-creator">Create Holi Colors</a>
+                </div>
+                <div class="tool-card">
+                    <h3>Indian Art Generator</h3>
+                    <p>Generate unique Indian art styles.</p>
+                    <a href="/indian-art-generator">Generate Art</a>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <h2 class="section-title">PDF Tools</h2>
+            <div class="tool-grid">
+                <div class="tool-card">
+                    <h3>PDF Converter</h3>
+                    <p>Convert PDFs to popular Indian file formats.</p>
+                    <a href="/pdf-converter">Convert PDFs</a>
+                </div>
+                <div class="tool-card">
+                    <h3>PDF Editor</h3>
+                    <p>Edit and annotate your PDFs with Indian cultural elements.</p>
+                    <a href="/pdf-editor">Edit PDFs</a>
+                </div>
+                <div class="tool-card">
+                    <h3>PDF Merger</h3>
+                    <p>Merge multiple PDFs into one.</p>
+                    <a href="/pdf-merger">Merge PDF</a>
+                </div>
+            </div>
+        </section>
+        <section class="festive-section">
+            <h2>Celebrating Indian Festivals</h2>
+            <p>Explore our special tools designed for Indian festivals. Create personalized greetings, edit photos with festive effects, and share your celebrations with unique designs.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 My Indian Tools. All rights reserved.</p>
+    </footer>
+    <script>
+        //  Add interactivity if needed.
+    </script>
+</body>
+</html>
